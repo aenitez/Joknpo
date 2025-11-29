@@ -1,54 +1,51 @@
-// script.js
-
-// Dados das classes e cartas
 const dados = {
     classes: {
         1: {
-            titulo: "Orc Guerreiro",
-            descricao: "Um poderoso guerreiro orc com força bruta e resistência incomparável. Perfeito para quem gosta de combate corpo a corpo.",
-            imagem: "orc.png"
+            titulo: "Guerreiro",
+            descricao: "Um poderoso guerreiro com força bruta e resistência incomparável.",
+            imagem: "Guerreiro.jpg"
         },
         2: {
-            titulo: "Mago Arcano",
-            descricao: "Mestre das artes arcanas, capaz de lançar feitiços devastadores e controlar os elementos. Ideal magia e estratégia à distância.",
-            imagem: "mago.png"
+            titulo: "Mago",
+            descricao: "Mestre das artes arcanas, capaz de lançar feitiços devastadores e controlar os elementos.",
+            imagem: "Bardo.jpg"
         },
         3: {
-            titulo: "Clérico Divino",
-            descricao: "Servo dos deuses, com habilidades de cura e proteção. Combina suporte ao grupo com poderosas magias divinas para enfrentar as trevas.",
-            imagem: "clérico.png"
+            titulo: "Bardo",
+            descricao: "Rei da musicalidade, capaz de realizar invocações e afetar seus aliados e inimigos com a música.",
+            imagem: "Mago.jpg"
         },
         4: {
-            titulo: "Assassino Sombrio",
-            descricao: "Mestre da furtividade e dos golpes precisos. Especialista em emboscadas e eliminação rápida de alvos prioritários.",
-            imagem: "assassino.png"
+            titulo: "Arqueira",
+            descricao: "Especialista em emboscadas e abates rápidos, sua precisão é letal.",
+            imagem: "Arqueira.jpg"
         }
     },
     cartas: {
         1: {
-            titulo: "Estratégia Ofensiva",
-            descricao: "Carta que aumenta o poder de ataque em 50% por 3 turnos. Perfeita para momentos decisivos na batalha.",
-            imagem: "carta-ofensiva.jpg" // Substitua pelo nome real da imagem
+            titulo: "Flechas gêmeas",
+            descricao: "A arqueira se prepara para neutralizar seu alvo, mirando em dois pontos fracos do adversário.",
+            imagem: "Tesoura.jpg"
         },
         2: {
-            titulo: "Barreira Mágica",
-            descricao: "Cria um escudo protetor que absorve dano mágico. Essencial contra magos e criaturas místicas.",
-            imagem: "carta-barreira.jpg" // Substitua pelo nome real da imagem
+            titulo: "Diplomacia",
+            descricao: "O guerreiro entrega uma carta ao seu adversário, ainda se preparando para uma escalada na situação.",
+            imagem: "Papel.jpg"
         },
         3: {
-            titulo: "Cura Regenerativa",
-            descricao: "Restaura pontos de vida gradualmente ao longo do tempo. Mantém seu personagem em combate por mais tempo.",
-            imagem: "carta-cura.jpg" // Substitua pelo nome real da imagem
+            titulo: "Chuva de meteoros",
+            descricao: "Utilizando sua mana, o mago invoca meteoros envoltos em energia arcana que voam em direção aos seus desafetos.",
+            imagem: "Pedra-mago.jpg"
         },
         4: {
-            titulo: "Furtividade Total",
-            descricao: "Torna o personagem invisível por um turno, permitindo reposicionamento tático ou ataque surpresa.",
-            imagem: "carta-furtividade.jpg" // Substitua pelo nome real da imagem
+            titulo: "Invocação: Golems",
+            descricao: "A energia espiritual flui do instrumento do bardo, invocando golems de pedregulho que atacam todos os adversários próximos.",
+            imagem: "Pedra.jpg"
         }
     }
 };
 
-// Criar e configurar o modal
+
 function criarModal() {
     const modal = document.createElement('div');
     modal.id = 'modal';
@@ -159,7 +156,6 @@ function criarModal() {
         this.style.color = '#fff';
     });
 
-    // Adicionar elementos ao modal
     modalImageContainer.appendChild(modalImage);
     modalContent.appendChild(closeBtn);
     modalContent.appendChild(modalImageContainer);
@@ -169,7 +165,6 @@ function criarModal() {
 
     document.body.appendChild(modal);
 
-    // Adicionar evento de tecla ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             fecharModal();
@@ -179,7 +174,6 @@ function criarModal() {
     return modal;
 }
 
-// Função para abrir o modal
 function abrirModal(tipo, id) {
     const modal = document.getElementById('modal');
     const dadosItem = dados[tipo][id];
@@ -190,7 +184,6 @@ function abrirModal(tipo, id) {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
 
-    // Configurar a imagem mantendo a proporção 9:16
     modalImage.style.backgroundImage = `url(${dadosItem.imagem})`;
     modalImage.style.display = 'block';
 
@@ -200,11 +193,9 @@ function abrirModal(tipo, id) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     
-    // Adicionar classe para prevenir scroll
     document.body.classList.add('modal-aberto');
 }
 
-// Função para fechar o modal
 function fecharModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'none';
@@ -212,12 +203,9 @@ function fecharModal() {
     document.body.classList.remove('modal-aberto');
 }
 
-// Inicializar quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function() {
-    // Criar o modal
     criarModal();
 
-    // Adicionar event listeners para os cards de classes
     const classesCards = document.querySelectorAll('.classes-carta');
     classesCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -226,11 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
             abrirModal(tipo, id);
         });
         
-        // Adicionar cursor pointer para indicar que é clicável
         card.style.cursor = 'pointer';
     });
 
-    // Adicionar event listeners para os cards de cartas
     const cartasCards = document.querySelectorAll('.cartas-cartas');
     cartasCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -239,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
             abrirModal(tipo, id);
         });
         
-        // Adicionar cursor pointer para indicar que é clicável
         card.style.cursor = 'pointer';
     });
 
