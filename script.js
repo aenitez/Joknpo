@@ -8,12 +8,12 @@ const dados = {
         2: {
             titulo: "Mago",
             descricao: "Mestre das artes arcanas, capaz de lançar feitiços devastadores e controlar os elementos.",
-            imagem: "Bardo.jpg"
+            imagem: "Mago.jpg"
         },
         3: {
             titulo: "Bardo",
             descricao: "Rei da musicalidade, capaz de realizar invocações e afetar seus aliados e inimigos com a música.",
-            imagem: "Mago.jpg"
+            imagem: "Bardo.jpg"
         },
         4: {
             titulo: "Arqueira",
