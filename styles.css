@@ -179,7 +179,7 @@ h2 {
 
 .classes-imagem2 {
     height: 100%;
-    background-image: url(Bardo.jpg);
+    background-image: url(Mago.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +192,7 @@ h2 {
 
 .classes-imagem3 {
     height: 100%;
-    background-image: url(Mago.jpg);
+    background-image: url(Bardo.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
