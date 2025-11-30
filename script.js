@@ -29,7 +29,7 @@ const dados = {
         },
         2: {
             titulo: "Diplomacia",
-            descricao: "O guerreiro entrega uma carta ao seu adversário, ainda se preparando para uma escalada na situação.",
+            descricao: "O guerreiro entrega uma carta, intimidando o adversário.",
             imagem: "Papel.jpg"
         },
         3: {
